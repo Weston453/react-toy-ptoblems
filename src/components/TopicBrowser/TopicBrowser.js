@@ -1,10 +1,15 @@
-import { render } from "react-dom";
-import {React, Component} from React;
+import React, {Component} from 'react';
 
-class TopicBrowser extends Component {
+import EvenAndOdd from "../Topics/EvenAndOdd";
+import FilterObject from "../Topics/FilterObject";
+import FilterString from "../Topics/FilterString";
+import Palindrome from "../Topics/Palindrome";
+import Sum from "../Topics/Sum";
+
+export default class TopicBrowser extends Component {
     render(){
         return (
-            <div>
+            <div className="puzzleFeed">
                 <EvenAndOdd />
                 <FilterObject />
                 <FilterString />
@@ -14,5 +19,3 @@ class TopicBrowser extends Component {
         )
     }
 }
-
-export default TopicBrowser 

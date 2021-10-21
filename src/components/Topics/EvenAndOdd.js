@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, {Component} from 'react';
 import { render } from "react-dom";
 
 export default class EvenAndOdd extends Component {
@@ -10,6 +10,28 @@ export default class EvenAndOdd extends Component {
              userInput: ''
         }
 
+    }
+
+    handleChange(value) {
+        this.setState({ userInput: value })
+        console.log(value)
+    }
+
+    assignEvenAndOdds(userInput) {
+        console.log(userInput)
+        console.log(typeof userInput)
+        let arr = userInput.split(',')
+        let evens = []
+        let odds = []
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                evens.push(parseInt(arr[i]))
+            } else {
+                odds.push(parseInt(arr[i]))
+            }
+        }
+        this.setState({ evenArray: evens, oddArray: odds })
     }
 
     render() {
